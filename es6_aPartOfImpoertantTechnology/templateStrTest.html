@@ -1,0 +1,23 @@
+<!--javascript es6 模板字符串
+@author heshengjin qq:2356899074-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>templateStr es6 模板字符串</title>
+    <script type="text/javascript" src="../lib/jquery-3.2.1.js"></script>
+</head>
+<body>
+  <div id="result">parent dom <br/>append dom=></div>
+  <script type="text/javascript">
+      $(document).ready(function () {
+          var es6 = "es6Test";
+          $("#result").append(`
+            There are <b>${es6}</b>
+            in your domc, <em>${es6}</em>
+            !
+            `);
+      });
+  </script>
+</body>
+</html>

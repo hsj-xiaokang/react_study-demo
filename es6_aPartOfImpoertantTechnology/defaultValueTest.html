@@ -1,0 +1,31 @@
+<!--默认值，default
+author:heshengjin qq:2356899074-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>默认值，default</title>
+</head>
+<body>
+ <script type="text/javascript">
+     /**
+      * 没有默认值的情况
+      * @param type
+      */
+     function animal(type){
+         type = type || 'cat';
+         console.log(type);
+     }
+     animal();
+
+     /**
+      * 默认值的情况
+      * @param type
+      */
+     function animal_(type = "catDefault"){
+         console.log(type);
+     }
+     animal_();
+ </script>
+</body>
+</html>

@@ -1,0 +1,63 @@
+<!--箭头函数与this的测试代码学习
+     @author heshengjin qq:2356899074-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>arrFunTest_箭头函数与this的测试代码学习</title>
+    <script type="text/javascript" src="../lib/jquery-3.2.1.js"></script>
+</head>
+<body>
+  <script type="text/javascript">
+      /******************************************************************************
+       * 不使用箭头函数的情况之下的this undefined
+       * @constructor
+       */
+      function  Animal_1(){
+              this.type = 'animal';
+      }
+      Animal_1.prototype.says_= function(say){
+          setTimeout(function(){
+              console.log(this.type + ' says ' + say)
+          }, 1000)
+      }
+
+      var animal_1 = new Animal_1();
+      animal_1.says_('hi!');  //undefined says hi!
+
+      /******************************************************************************
+       * 不使用箭头函数的情况之下的this 不为undefined操作
+       * @constructor
+       */
+      function  Animal_2(){
+          this.type = 'animal';
+      }
+      Animal_2.prototype.says_= function(say){
+          setTimeout(function(){
+              console.log(this.type + ' says ' + say+"  arguments=>"+arguments[0])
+          }.bind(this,"params"), 1000);
+      }
+
+      var animal_2 = new Animal_2();
+      animal_2.says_('hi!');  //animal says hi! =>params
+
+
+      /******************************************************************************
+       * 下面的箭头函数的语法es6支持，你可以bable转码之后执行，但是但是，貌似chrome已经实现了，我的测试版本版本 55.0.2883.87 m不用转码可以执行
+       *  关于bable转码请看：https://babeljs.io/
+       */
+      class Animal {
+          constructor(){
+              this.type = 'animal'
+          }
+          says(say){
+              setTimeout( (params) => {
+                  console.log(this.type + ' says ' + say)},
+              1000)
+          }
+      }
+      var animal = new Animal()
+      animal.says('hi')  //animal says hi
+  </script>
+</body>
+</html>

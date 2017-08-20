@@ -1,0 +1,25 @@
+<!--javascript的rest类似于Java的可变参数技术
+author:heshengjin qq:2356899074-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>resrTest 类似Java可变参数</title>
+</head>
+<body>
+ <script type="text/javascript">
+     /**
+      * 正向和反向都很好玩
+      * 反向的情况就是解开数组展开的感觉：
+      * @param types
+      */
+     function animals(...types){
+         console.log(types)
+     }
+     animals('cat', 'dog', 'fish') //["cat", "dog", "fish"]
+     animals(['cat', 'dog', 'fish']) //[["cat", "dog", "fish"]]
+     animals(...["cat", "dog", "fish"]);//["cat", "dog", "fish"]
+
+ </script>
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!--destructuring->es6新特性之结构语法
+@author heshengjin qq:2356899074-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>destructuring->es6新特性之结构语法</title>
+</head>
+<body>
+   <script type="text/javascript">
+       //这里win在window上面，下面的<script type="text/javascript">可以拿到
+       var win = "win";
+       /**
+        * 一般的玩法
+        * @type {string}
+        */
+       let cat = "cat";
+       let dog = "dog";
+       let zoom = {cat:cat,dog:dog};
+       console.log(zoom);
+
+       /**
+        * es6解构的玩法
+        * @type {string}
+        */
+       let name = "name";
+       let name_hsj = 'name_hsj';
+       let name_zoom = {name,name_hsj};
+       console.log(name_zoom);
+
+       /**
+        * 解构的玩法
+        * 注意的是：变量的名字一定要一一的对应，不然就会报错！
+        * @type {{s: string, e: string}}
+        */
+       let destru = {s:"d",e:"e"};
+       let {s,e} = destru;
+       console.log(s,e);
+   </script>
+
+  <script type="text/javascript">
+      //这里拿到win
+      console.log(win);
+  </script>
+</body>
+</html>
